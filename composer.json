@@ -32,7 +32,7 @@
             "Xyu\\Dingtalk\\": "src/"
         },
         "files": [
-            "src/Support/helper.php"
+            "src/helper.php"
         ]
     },
     "extra": {
