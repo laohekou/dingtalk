@@ -7,7 +7,7 @@ return [
 
     'default' => [
         // 机器人的access_token
-        'access_token' => env('DING_TOKEN','c7559742392d320ed7d382e7430052321c250e308e144a75a464f77673d7a237'),
+        'access_token' => env('DING_TOKEN',''),
         // 钉钉请求的超时时间
         'timeout' => env('DING_TIME_OUT',2.0),
         // secret
