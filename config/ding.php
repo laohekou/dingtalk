@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'debug' => true,
 
     // 默认发送的机器人
 
