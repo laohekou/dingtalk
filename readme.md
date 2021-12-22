@@ -13,7 +13,7 @@ $ composer require xyu/dingtalk
 发布配置 vendor:publish
 ```bash
 Hyperf
-php bin/hyperf.php vendor:publish xyu/sand
+php bin/hyperf.php vendor:publish xyu/dingtalk
 Laravel
 php artisan vendor:publish
 ```
