@@ -3,32 +3,41 @@
 namespace Xyu\Dingtalk;
 
 use Hanson\Foundation\Foundation;
-use Xyu\Sand\ServiceProvider;
+use Xyu\Dingtalk\Message\ActionCard;
+use Xyu\Dingtalk\Message\FeedCard;
+use Xyu\Dingtalk\Message\Link;
+use Xyu\Dingtalk\Message\Markdown;
+use Xyu\Dingtalk\Message\Text;
 
+/**
+ * Class DingApp
+ * @package Xyu\Dingtalk\DingApp
+ *
+ * @property-read ActionCard $action_card
+ * @property-read FeedCard $feed_card
+ * @property-read Link $link
+ * @property-read Markdown $markdown
+ * @property-read Text $text
+ */
 class DingApp extends Foundation
 {
     protected $providers = [
         ServiceProvider::class,
     ];
 
-    public function getAccessToken()
+    public function getUrl()
     {
-        return $this->getConfig('token');
+        return 'https://oapi.dingtalk.com/robot/send';
     }
 
-    public function getEnabled()
+    public function getAccessToken()
     {
-        return $this->getConfig('enabled');
+        return $this->getConfig('access_token');
     }
 
     public function getTimeout()
     {
         return $this->getConfig('timeout');
-    }
-
-    public function getSslVerify()
-    {
-        return $this->getConfig('ssl_verify');
     }
 
     public function getSecret()
