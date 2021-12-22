@@ -57,7 +57,6 @@ abstract class AbstractGateway
     public function send()
     {
         $params = $this->message + $this->at;
-        var_dump($params);die;
 
         $request = $this->app->http->setClient(
             new Client(['timeout' => $this->app->getTimeout()])

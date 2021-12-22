@@ -9,13 +9,13 @@ class ActionCard extends AbstractGateway
 
     protected $message;
 
-    public function message(string $title, string $markdown, int $hideAvatar = 0, int $btnOrientation = 0)
+    public function message(string $title, string $text, int $hideAvatar = 0, int $btnOrientation = 0)
     {
         $this->message = [
             'msgtype' => 'actionCard',
             'actionCard' => [
                 'title' => $title,
-                'text' => $markdown,
+                'text' => $text,
                 'hideAvatar' => $hideAvatar,
                 'btnOrientation' => $btnOrientation
             ]

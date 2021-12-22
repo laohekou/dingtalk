@@ -9,13 +9,13 @@ class Markdown extends AbstractGateway
 
     protected $message;
 
-    public function message(string $title, string $markdown)
+    public function message(string $title, string $text)
     {
         $this->message  = [
             'msgtype' => 'markdown',
             'markdown' => [
                 'title' => $title,
-                'text' => $markdown
+                'text' => $text
             ]
         ];
         return $this;
