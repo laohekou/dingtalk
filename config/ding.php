@@ -1,9 +1,6 @@
 <?php
 
 return [
-    'debug' => true,
-
-    // 默认发送的机器人
 
     'default' => [
         // 机器人的access_token
@@ -21,4 +18,5 @@ return [
 
         'secret' => env('DING_SECRET',''),
     ]
+
 ];

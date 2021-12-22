@@ -17,7 +17,7 @@ class Factory
 
     public function make(?string $name = null, ?array $config = null)
     {
-        $name = $name ?? $this->getDefaultDriver();
+        $name = $name ?? 'default';
 
         if (empty($this->config[$name])) {
             throw new DingAppException("Undefined {$name} configuration");
@@ -25,12 +25,11 @@ class Factory
 
         $config = $config ?? $this->config[$name];
 
-        return $this->drivers[$name] ?? $this->drivers[$name] = new DingApp($config);
-    }
+        if (!isset($config['debug'])) {
+            $config['debug'] = $this->config['debug'] ?? false;
+        }
 
-    public function getDefaultDriver()
-    {
-        return $this->config['default'] ?? 'default';
+        return $this->drivers[$name] ?? $this->drivers[$name] = new DingApp($config);
     }
 
     public function __call($name, $arguments)

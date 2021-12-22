@@ -25,6 +25,14 @@ class DingApp extends Foundation
         ServiceProvider::class,
     ];
 
+    public function __construct($config)
+    {
+        if (!isset($config['debug'])) {
+            $config['debug'] = $this->config['debug'] ?? false;
+        }
+        parent::__construct($config);
+    }
+
     public function getUrl()
     {
         return 'https://oapi.dingtalk.com/robot/send';
